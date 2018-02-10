@@ -45,4 +45,60 @@ public class Validator extends AppCompatActivity {
         }
         return flag;
     }
+
+    public boolean checkSpecialChar(String pass)    {
+
+        boolean flag;
+
+        //create a pattern of the regex
+        //match input to this pattern
+        Pattern pattern = Pattern.compile("[^A-Za-z0-9]");
+        Matcher matcher = pattern.matcher(pass);
+
+        boolean check = matcher.find();
+
+        //if input matches the pattern then passes rule
+        if (check == true) {
+            flag = true;
+        } else  {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public boolean checkDigit(String pass)  {
+
+        boolean flag;
+
+        Pattern pattern = Pattern.compile("[0-9]");
+        Matcher matcher = pattern.matcher(pass);
+
+        boolean check = matcher.find();
+
+        //test for input containing number pattern
+        if (check == true) {
+            flag = true;
+        } else  {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public boolean checkUpperCase(String pass)  {
+
+        boolean flag;
+
+        Pattern pattern = Pattern.compile("[A-Z]");
+        Matcher matcher = pattern.matcher(pass);
+
+        boolean check = matcher.find();
+
+        //check for input in uppercase pattern
+        if (check == true) {
+            flag = true;
+        } else  {
+            flag = false;
+        }
+        return flag;
+    }
 }

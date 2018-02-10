@@ -34,4 +34,44 @@ public class ValidatorTest {
 
         assertEquals(expected, output);
     }
+
+    @Test
+    public void checkSpecialChar() throws Exception {
+
+        String input = "qwerty1!";
+        boolean output;
+        boolean expected = true;
+
+        Validator validator = new Validator();
+        output = validator.checkSpecialChar(input);
+
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void checkDigit() throws Exception {
+
+        String input = "nodigits";
+        boolean output;
+        boolean expected = false;
+
+        Validator validator = new Validator();
+        output = validator.checkDigit(input);
+
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void checkUpperCase() throws Exception {
+
+        String input = "UppeRcAse";
+        boolean output;
+        boolean expected = true;
+
+        Validator validator = new Validator();
+        output = validator.checkLength(input);
+
+        assertEquals(expected, output);
+    }
+
 }
